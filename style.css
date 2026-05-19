@@ -1,0 +1,86 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --correct: #27ae60;
+    --wrong: #e74c3c;
+    --bg: #f5f7f9;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    color: var(--primary);
+    line-height: 1.6;
+}
+
+.page { padding: 20px; max-width: 600px; margin: auto; }
+.hidden { display: none; }
+
+header h1 { font-size: 1.5rem; text-align: center; }
+.disclaimer {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: white;
+    border: 2px solid var(--accent);
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:active { transform: scale(0.98); background: var(--accent); color: white; }
+
+.review-btn {
+    width: 100%;
+    margin-bottom: 20px;
+    background: #fff3e0;
+    border-color: #ff9800;
+}
+
+/* Quiz UI */
+nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.back-btn { background: none; border: none; font-size: 0.9rem; color: var(--accent); cursor: pointer; }
+
+#question-text { font-size: 1.1rem; font-weight: bold; margin-bottom: 20px; }
+.option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+#feedback-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    border-top: 5px solid var(--accent);
+}
+
+#result-label { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; }
+.correct-label { color: var(--correct); }
+.wrong-label { color: var(--wrong); }
+#explanation-text { font-size: 0.9rem; margin-bottom: 15px; }
+
+.complete-msg { text-align: center; margin-top: 50px; }
