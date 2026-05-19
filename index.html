@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循環器系 過去問マスター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- TOPページ (Phase 1) -->
+    <div id="top-page" class="page">
+        <header>
+            <h1>循環器系 過去問学習</h1>
+            <div class="disclaimer">
+                【注意】本アプリはAIを活用して作成されています。解答解説の正確性については細心の注意を払っていますが、誤りがないことを保証するものではありません。
+            </div>
+        </header>
+
+        <section class="category-section">
+            <button class="btn review-btn" onclick="startQuiz('review')">
+                復習問題 (<span id="review-count">0</span>問)
+            </button>
+
+            <h3>鍼灸過去問</h3>
+            <div class="grid">
+                <button class="btn" onclick="startQuiz('ana-1-17')">解剖 1-17回</button>
+                <button class="btn" onclick="startQuiz('ana-18-34')">解剖 18-34回</button>
+                <button class="btn" onclick="startQuiz('phy-1-17')">生理 1-17回</button>
+                <button class="btn" onclick="startQuiz('phy-18-34')">生理 18-34回</button>
+            </div>
+
+            <h3>あはき過去問</h3>
+            <div class="grid">
+                <button class="btn" onclick="startQuiz('ahaki-1-17')">第1-17回</button>
+                <button class="btn" onclick="startQuiz('ahaki-18-34')">第18-34回</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- 学習画面 (Phase 2) -->
+    <div id="quiz-page" class="page hidden">
+        <nav>
+            <button class="back-btn" onclick="goHome()">← 戻る</button>
+            <span id="quiz-progress">1/10</span>
+        </nav>
+        
+        <div id="question-container">
+            <p id="question-text"></p>
+            <div id="options-container"></div>
+        </div>
+
+        <div id="feedback-container" class="hidden">
+            <div id="result-label"></div>
+            <div id="explanation-text"></div>
+            <button id="next-btn" class="btn" onclick="nextQuestion()">次の問題へ</button>
+        </div>
+    </div>
+
+    <!-- 完了画面 -->
+    <div id="result-page" class="page hidden">
+        <div class="complete-msg">
+            <h2>お疲れ様でした！</h2>
+            <p>このカテゴリの問題がすべて終了しました。</p>
+            <button class="btn" onclick="goHome()">TOPへ戻る</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
